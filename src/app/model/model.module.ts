@@ -8,6 +8,7 @@ import { ProductRepositoryService } from './product-repository.service';
   imports: [
     CommonModule
   ],
+  //se inyectan aqui para utilzarse
   providers:[ProductDatasourceService, ProductRepositoryService],
 })
 export class ModelModule { }

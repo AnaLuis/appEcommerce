@@ -1,0 +1,17 @@
+<div class="pull-xs-rigth">
+  <small>
+    <span class="text-white" *ngIf="cart.itemCount > 0">
+      {{cart.itemCount}} item(s)
+      {{cart.cartPrice|currency:"USD": true: "2.2-2"}}
+    </span>
+    <span  class="text-white"  *ngIf="cart.itemCount==0">
+      (empty)
+    </span>
+    <button class="btn btn-secondary btn-sm " 
+    [disabled]="cart.itemCount==0">
+    <i class="fas fa-cart-plus icon-cart text-white">
+
+    </i>
+    </button>
+  </small>
+</div>
