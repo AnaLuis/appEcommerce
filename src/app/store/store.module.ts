@@ -8,14 +8,15 @@ import { Cart } from '../model/cart';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PageNotFoudComponent } from './page-not-foud/page-not-foud.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [StoreComponent, NavComponent, FooterComponent, CartSummaryComponent, CartComponent, CheckoutComponent, PageNotFoudComponent],
   imports: [
-    CommonModule
+    CommonModule,AppRoutingModule
 
   ],exports:[
-    StoreComponent
-  ],providers:[Cart]
+    StoreComponent,
+  ],providers:[Cart],
 })
 export class StoreModule { }

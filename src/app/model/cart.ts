@@ -24,6 +24,20 @@ recalculate(){
         this.cartPrice +=(l.quantity*l.product.MSRP);
     })
 }
+listProd(){
+    return this.lines;
+}
+editCantidad(line: CartLine, act: string){
+    if (act == "mas") {
+        line.quantity++;
+    } else {
+        line.quantity--;
+    }
+}
+
+deletCart(i: number){
+    this.lines.splice(i, 1);
+}
 
 }
 export class CartLine{

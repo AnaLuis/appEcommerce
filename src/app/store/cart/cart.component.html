@@ -1,3 +1,73 @@
-<p>
-  cart works!
-</p>
+<nav class="navbar h6 p-3 navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"></a>
+    <h3 class="navar-brand text-white d-block mx-auto">Detail</h3>
+    <a class="nav-link text-white" routerLink="/store" routerLinkActive="active" >Go shop</a>
+  </div>
+</nav>
+<div class="container mt-5">
+  <div class="row mt-1">
+    <div class="col-md-8 mx-auto col-lg-8 col-sm-12 mt-5">
+      <div class="table-responsive">
+        <table class=" table border border-light va-m">
+          <thead>
+            <tr><th class="text-center table-danger" colspan="8">PRODUCTS</th></tr>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems; let i = index">
+              <td>{{item.product.productName}}</td>
+              <td>{{item.product.MSRP | currency}}</td>
+              <td>
+                <div class="btn-group mx-auto" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-sm btn-warning w-15"
+                  (click)="editCantidad(item,'menor')" [disabled]="item.quantity == 1">
+                    <i class="fas fa-chevron-left p-0 m-0"></i>
+                  </button>
+                  <label class="form-control-sm text-center mx-2 py-2" for="">{{item.quantity}}</label>
+                  <button type="button" class="btn btn-sm btn-warning w-15" (click)="editCantidad(item,'mas')">
+                    <i class="fas fa-chevron-right p-0 m-0"></i>
+                  </button>
+                </div>
+              </td>
+              <td class="align-items-center">
+                <button class="btn btn-transparent form-control-sm" (click)="deletCart(i)">
+                  <i class="text-center text-danger d-block fas fa-trash-alt mx-auto"
+                  ></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-8 mx-auto mt-5">
+      <div class="card" style="width: 20rem;">
+        
+        <img class="card-img-top" src="https://marketplace.canva.com/MACDjSj5_94/1/thumbnail_large/canva-shopping-bag-icon-MACDjSj5_94.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold text-center">CART SUMMARY</h5>
+          <div class="table-respnsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="font-weight-bold text-center">Total Price</td>
+                  <td>{{cart.cartPrice | currency}}</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold text-center">Total Items</td>
+                  <td>{{cart.itemCount}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
