@@ -1,19 +1,12 @@
-
-   <nav class="navbar h6 p-3 navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#"></a>
-      <h3 class="navar-brand text-white d-block mx-auto">Detail</h3>
-      <a class="nav-link text-white" routerLink="/store" routerLinkActive="active" >Home</a>
-    </div>
-  </nav>
-   <div class="col-md-8 col-lg-8 col-sm-8 mx-auto mt-5">
+<app-nav>
+  </app-nav>
+  <div class="row">
+    <div class="col-md-8 col-lg-8 col-sm-8 mt-5">
       <div class="card w-100">
-        
-        <img class="card-img-top" src="https://marketplace.canva.com/MACDjSj5_94/1/thumbnail_large/canva-shopping-bag-icon-MACDjSj5_94.png" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title font-weight-bold text-center">Product Detail</h5>
-          <div class="table-respnsive">
-            <table class="table">
+          <div class="table-responsive">
+            <table class="table table-primary  ">
               <tbody>
                 <tr>
                   <td class="font-weight-bold text-center">Product</td>
@@ -21,11 +14,23 @@
                 </tr>
                 <tr>
                   <td class="font-weight-bold text-center">Price</td>
-                  <td>{{ prod.MSRP }}</td>
+                  <td class="font-weight-bold">{{ prod.MSRP | currency}}</td>
                 </tr>
                 <tr>
                   <td class="font-weight-bold text-center">Description</td>
                   <td>{{prod.productDescription}}</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold text-center">Scale</td>
+                  <td>{{prod.productScale}}</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold text-center">Vendor</td>
+                  <td>{{prod.productVendor}}</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold text-center">Line</td>
+                  <td>{{prod.productLine}}</td>
                 </tr>
               </tbody>
             </table>
@@ -33,3 +38,14 @@
         </div>
       </div>
     </div>
+    <div class="col-md-4 col-lg-4 col-sm-4 mt-5">
+      <div class="card w-100 mx-auto">
+        <div class="card-body w-100">
+            <img class="card-img-top" src="https://marketplace.canva.com/MACDjSj5_94/1/thumbnail_large/canva-shopping-bag-icon-MACDjSj5_94.png" alt="Card image cap">
+        </div>
+        <div class="card-footer w-100">
+          <button class="btn btn-warning w-100" (click)="addProduct()">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
