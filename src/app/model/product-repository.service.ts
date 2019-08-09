@@ -43,4 +43,8 @@ private vendor:string[]=[];
   getVendor():string[]{
     return this.vendor;
   }
+  getPro(productCode:string):Product{
+  return this.products.find(p=>p.productCode===productCode)
+
+  }
 }

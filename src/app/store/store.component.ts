@@ -69,4 +69,5 @@ export class StoreComponent implements OnInit {
  addProduct(pro:Product){
     this.cart.addLine(pro)
  }
+ 
 }
